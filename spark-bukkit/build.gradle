@@ -1,0 +1,31 @@
+dependencies {
+    implementation project(':spark-common')
+    implementation('me.lucko:adventure-platform-bukkit:4.9.4') {
+        exclude(module: 'adventure-api')
+        exclude(module: 'checker-qual')
+        exclude(module: 'annotations')
+        exclude(module: 'adventure-text-serializer-gson')
+        exclude(module: 'adventure-text-serializer-legacy')
+    }
+    compileOnly 'com.destroystokyo.paper:paper-api:1.16.4-R0.1-SNAPSHOT'
+    
+    // placeholders
+    compileOnly 'me.clip:placeholderapi:2.10.3'
+    compileOnly('be.maximvdw:MVdWPlaceholderAPI:3.0.1-SNAPSHOT') {
+        exclude(module: 'MVdWUpdater')
+    }
+}
+
+repositories {
+    maven { url 'https://papermc.io/repo/repository/maven-public/' }
+}
+
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        expand (
+                'pluginVersion': project.pluginVersion,
+                'pluginDescription': project.pluginDescription
+        )
+        include 'plugin.yml'
+    }
+}

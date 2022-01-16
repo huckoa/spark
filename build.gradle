@@ -1,0 +1,36 @@
+allprojects {
+    group = 'me.lucko'
+    version = '1.6-SNAPSHOT'
+
+    configurations {
+        compileClasspath // Fabric-loom needs this for remap jar for some reason
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'java-library'
+
+    ext {
+        pluginVersion = '1.7.2'
+        pluginDescription = 'spark is a performance profiling plugin/mod for Minecraft clients, servers and proxies.'
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+        options.release = 8
+    }
+
+    processResources {
+        duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    }
+
+    repositories {
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        maven { url "https://repo.lucko.me/" }
+        maven { url "https://jitpack.io" }
+    }
+
+}
