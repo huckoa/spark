@@ -8,10 +8,15 @@
   spark is a performance profiling plugin/mod for Minecraft clients, servers and proxies.
 </h3>
 
-#### Useful Links
-* [**Website**](https://spark.lucko.me/) - browse the project homepage
-* [**Documentation**](https://spark.lucko.me/docs) - read documentation and usage guides
-* [**Downloads**](https://spark.lucko.me/download) - latest plugin/mod downloads
+#### **Permissions** ####
+* **/spark profiler** - **spark.profiler** - 
+* **/spark tps** - **spark.tps** - 
+* **/spark healthreport** - **spark.healthreport** - 
+* **/spark tickmonitor** - **spark.tickmonitor** - The tickmonitor subcommand controls the tick monitoring system.
+* **/spark gc** - **spark.gc** - The gc subcommand prints information about the servers GC (garbage collection) history.
+* **/spark gcmonitor** - **spark.gcmonitor** - The gcmonitor subcommand controls the GC (garbage collection) monitoring system.
+* **/spark heapsummary** - **spark.heapsummary** - The heapsummary subcommand generates a new memory dump summary and upload it to the viewer.
+* **/spark heapdump** - **spark.activity** - The activity subcommand prints information about recent activity performed by spark.
 
 
 ## What does spark do?
